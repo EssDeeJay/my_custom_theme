@@ -1,0 +1,320 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-banner-v8" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  <div class="ds-banner-v8" style="background-image: url({{section.settings.bg_img | img_url : 'master'}})">
+    <div class="container container-v2">
+      <div class="row">        
+        <div class="col-md-3">
+          <div class="box-info1 ">
+            <div class="box-img-one">
+              {% if section.settings.img_banner1 != blank %}
+              <a href="{{section.settings.url_banner1}}"><img class="img-1 w-100" src="{{section.settings.img_banner1 | img_url:'master'}}" class="img-fluid"></a>
+              {% else %}
+                <a href="{{section.settings.url_banner1}}"><img class="img-1 w-100"  src="//placehold.it/332x337" class="img-fluid" alt=""></a>
+              {% endif %}
+                <div class="content-banner">
+                  <div class="list-inline info-bottom"> 
+                    {% if section.settings.button_1 != blank %}
+                    <a href="{{section.settings.url_banner1}}" class="button-shop list-inline-item">{{section.settings.button_1}}</a>
+                    {% endif %}
+                  </div>
+                </div>
+              
+            </div> 
+            <div class="title">
+               {{section.settings.title_1}}
+              </div>
+            <div class="box-img-one2">
+              {% if section.settings.img_banner1_2 != blank %}
+              <a href="{{section.settings.url_banner1_2}}"><img class="img-1 w-100" src="{{section.settings.img_banner1_2 | img_url:'master'}}" class="img-fluid"></a>
+              {% else %}
+                <a href="{{section.settings.url_banner1_2}}"><img class="img-1 w-100"  src="//placehold.it/332x337" class="img-fluid" alt=""></a>
+              {% endif %}
+              
+                <div class="content-banner">
+                  <div class="list-inline info-bottom"> 
+                    {% if section.settings.button_1_2 != blank %}
+                    <a href="{{section.settings.url_button1_2}}" class="button-shop list-inline-item">{{section.settings.button_1_2}}</a>
+                    {% endif %}
+                  </div>
+                </div>           
+            </div> 
+            <div class="title">
+                 {{section.settings.title_1_2}}
+              </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 text-center">
+          <div class="box-info2 ">
+  
+            <div class="box-img-two">
+              {% if section.settings.img_banner2 != blank %}
+              <a href="{{section.settings.url_banner2}}"><img class="img-2" src="{{section.settings.img_banner2 | img_url:'master'}}" class="img-fluid"></a>
+              {% else %}
+              <a href="{{section.settings.url_banner2}}"><img class="img-2" src="//placehold.it/514x741" class="img-fluid" alt=""></a>
+              {% endif %}
+
+              <div class="content-banner">
+                {% if section.settings.title_2 != blank %}
+                <h3 class="title-content mb-0">{{section.settings.title_2}}</h3>
+                {% endif %}
+
+                <div class="list-inline info-bottom"> 
+                  {% if section.settings.button_2 != blank %}
+                  <a href="{{section.settings.url_button2}}" class="button-shop list-inline-item">{{section.settings.button_2}}</a>
+                  {% endif %}
+                </div>
+              </div>
+              
+            </div>
+            
+            <div class="title">{{section.settings.title_2_2}}</div>
+            
+            
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <div class="box-info3">
+            <div class="box-img-three">
+              {% if section.settings.img_banner3 != blank %}
+              <a href="{{section.settings.url_banner3}}"><img class="img-3 w-100" src="{{section.settings.img_banner3 | img_url:'master'}}" class="img-fluid"></a>
+              {% else %}
+                <a href="{{section.settings.url_banner3}}"><img class="img-3 w-100" src="//placehold.it/332x337" class="img-fluid" alt=""></a>
+              {% endif %}
+              <div class="content-banner">
+                <div class="list-inline info-bottom"> 
+                  {% if section.settings.button_3 != blank %}
+                  <a href="{{section.settings.url_banner3}}" class="button-shop list-inline-item">{{section.settings.button_3}}</a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            <div class="title">
+                {{section.settings.title_3}}
+              </div>
+            
+            <div class="box-img-three2">
+              {% if section.settings.img_banner3_2 != blank %}
+              <a href="{{section.settings.url_banner3_2}}"><img class="img-3 w-100" src="{{section.settings.img_banner3_2 | img_url:'master'}}" class="img-fluid"></a>
+              {% else %}
+                <a href="{{section.settings.url_banner3_2}}"><img class="img-3 w-100" src="//placehold.it/332x337" class="img-fluid" alt=""></a>
+              {% endif %}
+              <div class="content-banner">
+                <div class="list-inline info-bottom"> 
+                  {% if section.settings.button_3_2 != blank %}
+                  <a href="{{section.settings.url_banner3_2}}" class="button-shop list-inline-item">{{section.settings.button_3_2}}</a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            <div class="title">
+                {{section.settings.title_3_2}}
+              </div>
+            
+            
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Section Banner v8",
+  "settings": [
+	
+	{
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "Background Image",
+	  "info": "1920 x 1402px recommended"
+    },
+  	{
+      "type": "header",
+      "content": "setting banner collumm 1"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_banner1",
+      "label": "Image",
+	  "info": "332 x 337px recommended"
+    },
+  	{
+      "type": "text",
+      "id": "button_1",
+      "label": "button 1",
+      "default": "Shop now"
+    },
+	{
+      "type": "text",
+      "id": "title_1",
+      "label": "Title 1",
+      "default": "dress<br>for success"
+    },
+	{
+      "type": "url",
+      "id": "url_banner1",
+      "label": "URL images banner 1",
+      "default": "/collections/all"
+    },
+
+	
+	{
+      "type": "image_picker",
+      "id": "img_banner1_2",
+      "label": "Image 1_2",
+	  "info": "332 x 337px recommended"
+    },
+  	{
+      "type": "text",
+      "id": "button_1_2",
+      "label": "button 1_2",
+      "default": "Shop now"
+    },
+	{
+      "type": "text",
+      "id": "title_1_2",
+      "label": "Title 1_2",
+      "default": "dress<br>for success"
+    },
+	{
+      "type": "url",
+      "id": "url_banner1_2",
+      "label": "URL images banner 1_2",
+      "default": "/collections/all"
+    },
+
+	{
+      "type": "header",
+      "content": "setting banner 2"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_banner2",
+      "label": "Image",
+	  "info": "450 x 517px recommended"
+    },
+  	{
+      "type": "url",
+      "id": "url_banner2",
+      "label": "URL images banner 2",
+      "default": "/collections/all"
+    },
+  	{
+      "type": "text",
+      "id": "button_2",
+      "label": "button 2",
+      "default": "Shop now"
+    },
+
+	{
+      "type": "text",
+      "id": "title_2",
+      "label": "title 2",
+      "default": "Divided: Festival Feels"
+    },
+	{
+      "type": "text",
+      "id": "title_2_2",
+      "label": "title 2_2",
+      "default": "ALL OUR COLLECTION"
+    },
+  	{
+      "type": "url",
+      "id": "url_button2",
+      "label": "URL button 2",
+      "default": "/collections/all"
+    },	
+
+
+
+	{
+      "type": "header",
+      "content": "setting banner collumm 3"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_banner3",
+      "label": "Image",
+	  "info": "332 x 337px recommended"
+    },
+  	{
+      "type": "text",
+      "id": "button_3",
+      "label": "button 3",
+      "default": "Shop now"
+    },
+	{
+      "type": "text",
+      "id": "title_3",
+      "label": "Title 3",
+      "default": "dress<br>for success"
+    },
+	{
+      "type": "url",
+      "id": "url_banner3",
+      "label": "URL images banner 3",
+      "default": "/collections/all"
+    },
+
+	
+	{
+      "type": "image_picker",
+      "id": "img_banner3_2",
+      "label": "Image 3_2",
+	  "info": "332 x 337px recommended"
+    },
+  	{
+      "type": "text",
+      "id": "button_3_2",
+      "label": "button 3_2",
+      "default": "Shop now"
+    },
+	{
+      "type": "text",
+      "id": "title_3_2",
+      "label": "Title 3_2",
+      "default": "dress<br>for success"
+    },
+	{
+      "type": "url",
+      "id": "url_banner3_2",
+      "label": "URL images banner 3_2",
+      "default": "/collections/all"
+    },
+
+
+
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section Banner v8",
+      "category": "HOME 5"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

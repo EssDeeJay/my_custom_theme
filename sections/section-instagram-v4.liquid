@@ -1,0 +1,289 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-intagram-v4" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %} {% if section.settings.sections_layout == "dark" %}background: {{section.settings.sections_bg_color}};{% endif %}">
+  
+    <div class="ds-intagram-v4" style="background-color: {{section.settings.bg_color}}">
+
+	<div class="container container-v2">
+      <div class="box-intargram">
+        <div class="text-center box-sextion-top  text_top">
+
+          {% if section.settings.section_title_big != blank %}
+          <h3 class="title_insta text-center mb-0">{{section.settings.section_title_big}}</h3>
+          {% endif %}
+
+        </div>       
+
+        <div class="">
+          <div class=" row justify-content-center">
+			
+            <div class="col-lg-6  col-12 col-md-6 ">
+              <div class="box-img">
+                    <div class="picture">
+                      <a href="{{section.settings.url_ins3}}">
+                        {% if section.settings.img_ins3 != blank %}
+                        <img class="w-100" src="{{section.settings.img_ins3|img_url : 'master'}}">
+                        {% else %}
+                        <img class="w-100" src="//placehold.it/690x690">
+                        {% endif %}
+                      </a>
+                    </div>
+                    <div class="content-intagram text-center">
+                      <a href="{{section.settings.url_ins3}}" class="ti-instagram"></a>
+                      {% if section.settings.section_title_item != blank %}
+                      <h4 class="mb-0">{{section.settings.section_title_item}}</h4>
+                      {% endif %}
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-lg-3  col-12 col-md-3 ">
+              <div class="row">
+                <div class="col-12">
+                  <div class="box-img">
+                    <div class="picture">
+                      <a href="{{section.settings.url_ins1}}">
+                        {% if section.settings.img_ins1 != blank %}
+                        <img class="w-100" src="{{section.settings.img_ins1|img_url : 'master'}}">
+                        {% else %}
+                        <img class="w-100" src="//placehold.it/330x330">
+                        {% endif %}
+                      </a>
+                    </div>
+                    <div class="content-intagram text-center">
+                      <a href="{{section.settings.url_ins1}}" class="ti-instagram"></a>
+                      {% if section.settings.section_title_item != blank %}
+                      <h4 class="mb-0">{{section.settings.section_title_item}}</h4>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="box-img">
+                    <div class="picture">
+                      <a href="{{section.settings.url_ins2}}">
+                        {% if section.settings.img_ins2 != blank %}
+                        <img class="w-100" src="{{section.settings.img_ins2|img_url : 'master'}}">
+                        {% else %}
+                        <img class="w-100" src="//placehold.it/330x330">
+                        {% endif %}
+                      </a>
+                    </div>
+                    <div class="content-intagram text-center">
+                      <a href="{{section.settings.url_ins2}}" class="ti-instagram"></a>
+                      {% if section.settings.section_title_item != blank %}
+                      <h4 class="mb-0">{{section.settings.section_title_item}}</h4>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            
+
+            <div class="col-lg-3  col-12  col-md-3 ">
+              <div class="row">
+                <div class="col-12">
+                  <div class="box-img">
+                    <div class="picture">
+                      <a href="{{section.settings.url_ins4}}">
+                        {% if section.settings.img_ins4 != blank %}
+                        <img class="w-100" src="{{section.settings.img_ins4|img_url : 'master'}}">
+                        {% else %}
+                        <img class="w-100" src="//placehold.it/330x330">
+                        {% endif %}
+                      </a>
+                    </div>
+                    <div class="content-intagram text-center">
+                      <a href="{{section.settings.url_ins4}}" class="ti-instagram"></a>
+                      {% if section.settings.section_title_item != blank %}
+                      <h4 class="mb-0">{{section.settings.section_title_item}}</h4>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="box-img">
+                    <div class="picture">
+                      <a href="{{section.settings.url_ins5}}">
+                        {% if section.settings.img_ins5 != blank %}
+                        <img class="w-100" src="{{section.settings.img_ins5|img_url : 'master'}}">
+                        {% else %}
+                        <img class="w-100" src="//placehold.it/330x330">
+                        {% endif %}
+                      </a>
+                    </div>
+                    <div class="content-intagram text-center">
+                      <a href="{{section.settings.url_ins5}}" class="ti-instagram"></a>
+                      {% if section.settings.section_title_item != blank %}
+                      <h4 class="mb-0">{{section.settings.section_title_item}}</h4>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center  text_bottom">
+          {% if section.settings.title_icon1 != blank %}
+          <span class="icon-top"><i class="{{section.settings.title_icon1}}"></i></span>
+          {% endif %}
+          {% if section.settings.section_title_big != blank %}
+          <h3 class=" text-center mb-0">{{section.settings.section_title_bot}}</h3>
+          {% endif %}
+
+        </div>  
+
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Section Instagram v4",
+  "class": "index-section",
+  "settings": [
+
+	{
+		"type" : "color",
+		"id" : "bg_color",
+		"label": "Background Color",
+		"default" : "#fbf4fd"
+	},
+	{
+      "type": "header",
+      "content": "Title Intagram"
+    },
+
+	{
+      "type": "text",
+      "id": "section_title_big",
+      "label": "Title top section",
+      "default": "As seen on you"
+    },
+	{
+      "type": "text",
+      "id": "section_title_bot",
+      "label": "Title bottom section",
+      "default": " Follow us on Instagram"
+    },
+	{
+      "type": "text",
+      "id": "title_icon1",
+      "label": "Icon",
+      "default": "icon-instagram2",
+      "info": "[Get icon in here](https:\/\/fontawesome.com\/v4.7.0\/icons)"
+    },
+	{
+      "type": "header",
+      "content": "Info Intagram"
+    },
+
+    {
+    "type": "image_picker",
+    "id": "img_ins3",
+    "label": "Image Instagram 1",
+    "info": "690 x 690px recommended"
+    },
+    {
+    "type": "url",
+    "id": "url_ins3",
+    "label": "URL images instagram 1",
+    "default": "/collections/all"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_ins1",
+      "label": "Image Instagram 2",
+	  "info": "330 x 330px recommended"
+    },
+	{
+      "type": "url",
+      "id": "url_ins1",
+      "label": "URL images instagram 2",
+      "default": "/collections/all"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_ins2",
+      "label": "Image Instagram32",
+	  "info": "330 x 330px recommended"
+    },
+	{
+      "type": "url",
+      "id": "url_ins2",
+      "label": "URL images instagram 3",
+      "default": "/collections/all"
+    },
+
+	{
+      "type": "image_picker",
+      "id": "img_ins4",
+      "label": "Image Instagram 4",
+	  "info": "330 x 330px recommended"
+    },
+	{
+      "type": "url",
+      "id": "url_ins4",
+      "label": "URL images instagram 4",
+      "default": "/collections/all"
+    },
+	{
+      "type": "image_picker",
+      "id": "img_ins5",
+      "label": "Image Instagram 5",
+	  "info": "330 x 330px recommended"
+    },
+	{
+      "type": "url",
+      "id": "url_ins5",
+      "label": "URL images instagram 5",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "section_title_item",
+      "label": "Title item",
+      "default": "Shop it"
+    },
+	
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section Intagram v4",
+      "category": "HOME 5"
+    }
+  ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

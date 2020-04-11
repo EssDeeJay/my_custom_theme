@@ -1,0 +1,75 @@
+<header id="header" class="header-v3-h3 js_height_hd jsheader3 {% if settings.hdv3_enable_absolute %}header-absolute {% endif %} d-none d-xl-block">
+  <div class="container container-v2">
+    <div class="row align-items-center">
+      <div class="col-lg-2">
+        <div class="logo">
+          <div class="center logo delay05">          	
+            {% if settings.hdv3_logo_svg !=blank %}
+            <div class="logosvg" style="max-width:{{settings.hdv3_logo_maxwidth}}px;">
+              <a class="logourl" href="{{shop.url}}">{{settings.hdv3_logo_svg}}</a>
+            </div>
+            {% else %}          	
+            <a href="{{shop.url}}">
+              {% if settings.hdv3_logo != blank %}
+              <img src="{{settings.hdv3_logo|img_url:'master'}}" width="{{settings.hdv3_logo_maxwidth}}" alt="{{shop.name}}">
+              {% else %}
+              <img src="//placehold.it/160x46" width="{{settings.hdv3_logo_maxwidth}}" alt="{{shop.name}}">
+              {% endif %}
+            </a>
+            {% endif %}          
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 d-flex justify-content-center">
+        <div class="menu">
+			{% include 'eveland-menu' %}
+        </div>
+      </div>
+      <div class="col-lg-3 currencies-login">        
+   
+        <div class="cart-login-search align-items-center"> 
+          <ul class="list-inline list-unstyled mb-0">
+            <li class="list-inline-item mr-0 search">
+              <a href="javascript:void(0)" class=" js-search-destop"><i class="{{settings.hd_icon_search}}"></i></a>
+            </li>
+            <li class="list-inline-item mr-0 login_hd">
+              <a href="{% if customer %}/account {% else %}javascript:void(0){% endif %}" class="login {% if customer %}{% else %}js-call-popup-login{% endif %}"><i class="{{settings.hd_icon_user}}"></i>{{settings.text_login}}</a>
+            </li>
+            <li class="list-inline-item mr-0 wishlist">
+              <a href="/wishlist" class=" "><i class="{{settings.hd_icon_wishlist}}"></i></a>
+            </li>
+            <li class="list-inline-item mr-0">
+              <a href="javascript:void(0)" class="cart js-call-minicart"><i class="{{settings.hd_icon_cart}}"></i>
+                <span class="number-cart enj-cartcount">{{ cart.item_count }}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  #header .currencies-login .cart-login-search ul .login_hd{
+  	border: 1px solid {{settings.hdv3_color_text}};
+  }
+  
+  #header .currencies-login .cart-login-search ul li a{
+    color: {{settings.hdv3_color_text}};
+  }
+  #header .menu ul li .nav-link{
+  	color: {{settings.hdv3_color_text}};
+  }
+  #header .menu ul li .nav-link:after{
+  	background: {{settings.hdv3_color_text}};
+  }
+  }
+  #header .currencies-login .cart-login-search ul .login_hd:after{
+  	border: 1px  solid {{settings.hdv3_color_text}};
+  }
+  #header .currencies-login .cart-login-search ul li .cart .number-cart{
+  	color: {{settings.hdv3_color_text}};
+  }
+</style>

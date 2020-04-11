@@ -1,0 +1,88 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-newsletter-v2" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{%endif%} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %}">
+  {% if settings.newsletter_form_action != blank %}
+  {% assign form_action = settings.newsletter_form_action %}
+  {% else %}
+  {% assign form_action = '#' %}
+  {% endif %}
+  <div class="container container-v2">
+  <div class="section-newsletter-v1 ds-newsletter-v2">    
+        {% if section.settings.title_newletter != blank %}
+        <div class="title_newletter">
+          <h3 class="title mb-0">{{section.settings.title_newletter}}</h3>
+        </div>
+        {% endif %}
+        
+        {% if section.settings.content_newletter != blank %}
+        <p class="mb-0 content">{{section.settings.content_newletter}}</p>
+        {% endif %}      
+      
+      <div class="row ">        
+        <div class="col-lg-12">
+          <div class="newletter_email">          
+          <form class="needs-validation form-inline" action="{{form_action}}" method="post">
+            <div class="form-group">                           
+              <input type="email" name="EMAIL" class="form-control" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" required >                 
+            </div>
+            <button class="btn" type="submit">{{ 'general.newsletter_form.submit_footer' | t }}</button>
+          </form>
+        </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  
+</style>
+
+
+{% schema %}
+{
+  "name": "Section Newsletter v2",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title_newletter",
+      "label": "Title Newletter",
+      "default": "LIKE BEING FIRST?"
+    },
+
+	{
+      "type": "text",
+      "id": "content_newletter",
+      "label": "Content Newletter",
+      "default": "Then get your can't-miss style news, before everybody else"
+    },
+
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section Newsletter v2",
+      "category": "HOME 2"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

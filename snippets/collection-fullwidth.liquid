@@ -1,0 +1,131 @@
+<section class="collection-page-fullwidth">
+  
+  <div class="filter-to-left">
+    <div class="filter_sidebar">
+      <div class="close_filter">{{'products.product.close' | t}} <i class="ti-close"></i></div>
+      {% include 'collection-sidebar' %}
+      
+      
+    </div>
+ 
+  </div>
+   <div class="overlay-filter d-none d-sm-block"></div>
+       
+
+  <div class="content-page">
+    
+
+    
+    <div class="container container-v2">
+
+      <div class="row shop_control " >
+        {% if section.settings.ena_filter %}
+        <div  class="col-md-6 col-12 ">
+          <div class="filter_sortby">
+                        
+            <a class="filter {% if section.settings.filter_layout == "filter_push_left" %}js_filter{% endif %}" {% if section.settings.filter_layout == "filter_collapse" %} data-toggle="collapse" data-target="#demo" {% endif %} href="javascript:void(0)">
+              <p class="mb-0">{{'products.product.filter' | t}}</p>
+            </a>
+          
+
+
+          </div>  
+        </div>
+        {% endif %}
+
+        {% if section.settings.ena_filter2 %}
+        <div  class="col-md-6 col-12">
+          <div class="style_layout_prod  {% if section.settings.ena_filter == false %} justify-content-md-start {% else %}justify-content-md-end{% endif %} justify-content-center ">
+
+            {% include 'collection-sorting' %}
+          </div>  
+        </div>
+        {% endif %}
+      </div> 
+            
+      <div id="demo" class="collapse filter_ver2">
+        <div class="filter_sidebar2 row engoj-collection-sidebar engoc_sw_filter_tag">
+         {% include 'collection-droplist' %}
+        </div>  
+      </div>
+      
+      <div class="clearfix relative collection_prod">  
+        {% if section.settings.prod_layout == 'prod_grid' %}
+	    <div class="product-grid-view grid-uniform">
+              <div class="row ">
+                  {% for product in collection.products %}
+                  <div class="col-md-4 {% if section.settings.prod_per_row == 'prod_col_4' %}col-lg-4{% elsif section.settings.prod_per_row == 'prod_col_3' %} col-lg-3 {% elsif section.settings.prod_per_row == 'prod_col_2dot4' %} col-lg-2dot4 {% endif %} col-6 pb-4 trans-product">
+                    {% include 'product-item-v1' %}
+                  </div>
+                  {% else %}
+                  {% if collection.handle == 'all' and current_tags == '' %}
+              
+                  {% for i in (1..12) %}
+                  <div class="col-lg-3 col-md-3">
+                  	{% include 'empty-product-item' %}
+                  </div>
+                  {% endfor %}
+
+                  {% else %}
+
+                  {% comment %}
+                  If collection exists but is empty, display message
+                  {% endcomment %}
+                  <div class="text-center">
+                    <p>{{ 'collections.general.no_matches' | t }}</p>
+                  </div>
+
+                  {% endif %}
+                  {% endfor %}
+
+              </div>
+              
+              {% if paginate.pages > 1 %}
+                <div class="pagi-nav text-right">
+                    {{ paginate | default_pagination | replace: '&laquo; Previous', '<i class="fa fa-angle-left"></i>' | replace: 'Next &raquo;', '<i class="fa fa-angle-right"></i>' }}
+                </div>
+              {% endif %}
+
+              <!-- End Paginav -->
+            </div>
+        {% elsif section.settings.prod_layout == 'prod_list' %}
+        <div class="product-list-view grid-uniform  ">
+          {% for product in collection.products %}
+          <div class="list_prod">
+            {% include 'product-item-list' %}
+          </div>
+          {% else %}
+          {% if collection.handle == 'all' and current_tags == '' %}
+
+          {% for i in (1..12) %}
+          <div class="col-lg-3">
+            {% include 'empty-product-item' %}
+          </div>
+          {% endfor %}
+
+          {% else %}
+
+          {% comment %}
+          If collection exists but is empty, display message
+          {% endcomment %}
+          <div class="text-center">
+            <p>{{ 'collections.general.no_matches' | t }}</p>
+          </div>
+
+          {% endif %}
+          {% endfor %}
+			{% if paginate.pages > 1 %}
+              <div class="pagi-nav pt-4">
+                  {{ paginate | default_pagination | replace: '&laquo; Previous', '<i class="fa fa-angle-left"></i>' | replace: 'Next &raquo;', '<i class="fa fa-angle-right"></i>' }}
+              </div>
+              {% endif %}
+
+              <!-- End Paginav -->
+        </div>
+        {% endif %}
+      </div>
+      
+      
+    </div>
+  </div>
+</section>
